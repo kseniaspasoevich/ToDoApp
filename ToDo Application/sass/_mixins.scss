@@ -1,0 +1,19 @@
+@mixin styleWindow {
+    background: linear-gradient(
+      to left top,
+      $color-primary,
+      $color-secondary,
+      $color-tertiary
+    );
+    //opacity: 80%;
+    width: 50rem;
+    height: 30rem;
+    position: absolute;
+    top: 15rem;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    border: 3px solid $color-quaternary;
+    position: absolute;
+    left: 45rem;
+    top: 20rem;
+  }

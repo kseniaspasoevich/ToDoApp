@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/icon.webp" />
+
+    <title>My ToDo list</title>
+  </head>
+  <body>
+    <!-- MAIN PART -->
+    <div class="content">
+      <div class="content__title">
+        <p id="header-title">My ToDo List</p>
+        <button class="add-task">ADD NEW TASK</button>
+      </div>
+      <div class="content__tasks">
+        <!-- column 1 -->
+        <div class="column content__tasks--start">
+          <p id="start-title">To Do:</p>
+          <div class="show-task show-task--1"></div>
+        </div>
+
+        <!-- column 2 -->
+        <div class="column content__tasks--pending">
+          <p id="pending-title">In progress:</p>
+          <div class="show-task show-task--2"></div>
+        </div>
+
+        <!-- column 3 -->
+        <div class="column content__tasks--finished">
+          <p id="finished-title">Done:</p>
+          <div class="show-task show-task--3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIDDEN ELEMENTS  -->
+
+    <div class="task task--hidden">
+      <div class="task__inputs">
+        <textarea
+          id="title"
+          cols="30"
+          rows="10"
+          placeholder="Title..."
+        ></textarea>
+        <textarea
+          id="description"
+          cols="30"
+          rows="10"
+          placeholder="Description..."
+        ></textarea>
+      </div>
+      <button class="add-task add-task--modal">Save</button>
+      <button class="add-task add-task--close">Close</button>
+      <div class="checkbox">
+        <input
+          type="checkbox"
+          id="toDo"
+          class="checkbox-value"
+          value="TODO"
+          onchange="cbChange(this)"
+        />
+        <label> TO DO</label><br />
+        <input
+          type="checkbox"
+          id="inProgress"
+          class="checkbox-value"
+          value="PROGRESS"
+          onchange="cbChange(this)"
+        />
+        <label> IN PROGRESS</label><br />
+        <input
+          type="checkbox"
+          id="done"
+          class="checkbox-value"
+          value="DONE"
+          onchange="cbChange(this)"
+        />
+        <label> DONE</label><br />
+      </div>
+    </div>
+
+    <div class="edit-task edit-task--hidden">
+      <div class="edit-task__inputs">
+        <textarea
+          id="title-edit"
+          cols="30"
+          rows="10"
+          placeholder="Edit title..."
+        ></textarea>
+        <textarea
+          id="description-edit"
+          cols="30"
+          rows="10"
+          placeholder="Edit description..."
+        ></textarea>
+      </div>
+      <button class="add-task add-task--save-close">SAVE AND CLOSE</button>
+    </div>
+
+    <script type="module" src="src/index.js"></script>
+    <script type="text/javascript">
+      function cbChange(obj) {
+        var cbs = document.getElementsByClassName("checkbox-value");
+        for (var i = 0; i < cbs.length; i++) {
+          cbs[i].checked = false;
+        }
+        obj.checked = true;
+      }
+    </script>
+  </body>
+</html>

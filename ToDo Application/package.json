@@ -1,0 +1,15 @@
+{
+  "name": "todo-application",
+  "version": "1.0.0",
+  "description": "My ToDo List",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Ksenija Spasojevic",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
